@@ -14,47 +14,23 @@ interface Job {
 export default function ExperienceSection() {
   const jobs: Job[] = [
     {
-      date: "2021 — Present",
-      title: "Senior Fullstack Developer",
-      company: "Tech Innovations Inc.",
+      date: "2024 — Present",
+      title: "Full Stack Developer | Freelancer",
+      company: "Tringledo",
       description: [
-        "Led the development of a customer-facing portal that increased user engagement by 40%",
-        "Architected and implemented microservices using Node.js and Docker",
-        "Mentored junior developers and conducted code reviews",
-        "Optimized database queries resulting in 60% faster load times",
+        "Designed and developed dynamic mobile and web applications for real-world clients, ensuring performance,scalability, and user-centric design.",
+        "Worked as a developer for Tringledo.com, contributing to various software solutions and technical implementations",
+        "Managed end-to-end development, including UI/UX design, backend logic, database integration, and deployment.",
+        "Collaborated with clients to define project requirements and deliver high-quality, maintainable code on time.",
       ],
-      tech: ["React", "Node.js", "TypeScript", "Docker"],
-    },
-    {
-      date: "2018 — 2020",
-      title: "Fullstack Developer",
-      company: "Digital Solutions Ltd.",
-      description: [
-        "Developed and maintained multiple client websites using React and Express",
-        "Implemented authentication systems and payment integrations",
-        "Collaborated with designers to implement responsive UI components",
-        "Participated in agile development processes and sprint planning",
-      ],
-      tech: ["React", "Express", "MongoDB", "AWS"],
-    },
-    {
-      date: "2016 — 2018",
-      title: "Frontend Developer",
-      company: "WebCraft Agency",
-      description: [
-        "Built interactive web applications using JavaScript and jQuery",
-        "Converted design mockups into responsive HTML/CSS layouts",
-        "Optimized website performance and accessibility",
-        "Worked closely with backend developers to integrate APIs",
-      ],
-      tech: ["JavaScript", "jQuery", "HTML", "CSS"],
+      tech: ["React", "Node.js","Next.js", "TypeScript", "Flutter"],
     },
   ]
 
   return (
     <section id="experience" className="py-24">
       <div className="max-w-4xl mx-auto">
-        <SectionHeading number="02" title="Where I've Worked" />
+        <SectionHeading number="02" title="Experience" />
 
         <div className="space-y-12">
           {jobs.map((job, index) => (

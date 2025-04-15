@@ -83,8 +83,9 @@ export default function Header() {
           ))}
 
           <motion.a
-            href="#"
+            href="https://drive.google.com/file/d/1uw77BpJ3kUyCKGvSTQWIg80qu43EdvZR/view?usp=sharing"
             className="px-4 py-2 border border-[#3b82f6] text-[#3b82f6] rounded text-sm font-mono hover:bg-[#3b82f6]/10 transition-colors"
+            target="_blank"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, delay: 0.5 }}

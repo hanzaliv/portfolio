@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { X, Mail, Github, Linkedin, Twitter } from "lucide-react"
+import { X, Mail, Github, Linkedin, Twitter, Phone } from "lucide-react"
 
 interface ContactPopupProps {
   isOpen: boolean
@@ -39,44 +39,48 @@ export default function ContactPopup({ isOpen, onClose }: ContactPopupProps) {
 
             <div className="space-y-4">
               <a
-                href="mailto:your.email@example.com"
+                href="mailto:wahansaliviru@gmail.com"
                 className="flex items-center gap-3 text-[#a8b2d1] hover:text-[#3b82f6] transition-colors group"
               >
                 <div className="p-3 border border-[#233554] rounded-full group-hover:border-[#3b82f6] transition-colors">
                   <Mail size={20} />
                 </div>
-                <span>your.email@example.com</span>
+                <span>wahansaliviru@gmail.com</span>
               </a>
 
               <a
-                href="#"
+                href="https://github.com/hanzaliv"
                 className="flex items-center gap-3 text-[#a8b2d1] hover:text-[#3b82f6] transition-colors group"
+                target="_blank"
               >
                 <div className="p-3 border border-[#233554] rounded-full group-hover:border-[#3b82f6] transition-colors">
                   <Github size={20} />
                 </div>
-                <span>github.com/yourusername</span>
+                <span>Github</span>
               </a>
 
               <a
-                href="#"
+                href="https://www.linkedin.com/in/hansa-gunasinghe"
                 className="flex items-center gap-3 text-[#a8b2d1] hover:text-[#3b82f6] transition-colors group"
+                target="_blank"
               >
                 <div className="p-3 border border-[#233554] rounded-full group-hover:border-[#3b82f6] transition-colors">
                   <Linkedin size={20} />
                 </div>
-                <span>linkedin.com/in/yourname</span>
+                <span>Linkedin</span>
               </a>
 
-              <a
-                href="#"
+                <a 
+                href="https://wa.me/94703767949"
                 className="flex items-center gap-3 text-[#a8b2d1] hover:text-[#3b82f6] transition-colors group"
-              >
+                target="_blank"
+                rel="noopener noreferrer"
+                >
                 <div className="p-3 border border-[#233554] rounded-full group-hover:border-[#3b82f6] transition-colors">
-                  <Twitter size={20} />
+                  <Phone size={20} />
                 </div>
-                <span>twitter.com/yourhandle</span>
-              </a>
+                <span>WhatsApp</span>
+                </a>
             </div>
           </div>
 

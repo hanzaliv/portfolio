@@ -37,13 +37,13 @@ export default function SocialLinks() {
         className="fixed bottom-0 left-6 md:left-10 lg:left-12 hidden md:block z-30"
       >
         <div className="flex flex-col items-center gap-6">
-          <a href="#" className="text-[#a8b2d1] hover:text-[#3b82f6] transition-colors">
+          <a href="https://github.com/hanzaliv" className="text-[#a8b2d1] hover:text-[#3b82f6] transition-colors" target="_blank" rel="noopener noreferrer">
             <Github size={20} />
           </a>
-          <a href="#" className="text-[#a8b2d1] hover:text-[#3b82f6] transition-colors">
+          {/* <a href="#" className="text-[#a8b2d1] hover:text-[#3b82f6] transition-colors">
             <Twitter size={20} />
-          </a>
-          <a href="#" className="text-[#a8b2d1] hover:text-[#3b82f6] transition-colors">
+          </a> */}
+          <a href="https://www.linkedin.com/in/hansa-gunasinghe/" className="text-[#a8b2d1] hover:text-[#3b82f6] transition-colors" target="_blank" rel="noopener noreferrer">
             <Linkedin size={20} />
           </a>
           <div className="h-24 w-px bg-[#a8b2d1]"></div>
@@ -61,7 +61,7 @@ export default function SocialLinks() {
             href="mailto:your.email@example.com"
             className="text-[#a8b2d1] hover:text-[#3b82f6] transition-colors font-mono text-xs vertical-text"
           >
-            your.email@example.com
+            wahansaliviru@gmail.com
           </a>
           <div className="h-24 w-px bg-[#a8b2d1]"></div>
         </div>

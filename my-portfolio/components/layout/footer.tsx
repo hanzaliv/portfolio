@@ -11,7 +11,7 @@ export default function Footer() {
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
       >
-        <p>Designed & Built by Hansa Gunasinghe</p>
+        <p>Designed & Built by Hansa Gunasinghe © 2025</p>
       </motion.div>
     </footer>
   )

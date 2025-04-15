@@ -22,9 +22,9 @@ export default function HeroSection({ onContactClick }: HeroSectionProps) {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.1 }}
-          className="text-5xl md:text-7xl font-bold text-[#ccd6f6] mb-4"
+          className="text-5xl md:text-7xl font-bold text-[#ccd6f6] mb-4"  
         >
-          Your Name.
+          Hansa Gunasinghe.
         </motion.h1>
         <motion.h2
           initial={{ opacity: 0, y: 10 }}
@@ -32,7 +32,7 @@ export default function HeroSection({ onContactClick }: HeroSectionProps) {
           transition={{ duration: 0.3, delay: 0.2 }}
           className="text-4xl md:text-6xl font-bold text-[#8892b0] mb-6"
         >
-          I build things for the web.
+          Full Stack Developer.
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 10 }}
@@ -40,8 +40,11 @@ export default function HeroSection({ onContactClick }: HeroSectionProps) {
           transition={{ duration: 0.3, delay: 0.3 }}
           className="text-lg text-[#8892b0] mb-12 max-w-xl"
         >
-          I'm a fullstack developer specializing in building exceptional digital experiences. Currently, I'm focused on
-          building accessible, human-centered products.
+          {/* I'm a fullstack developer specializing in building exceptional digital experiences. Currently, I'm focused on
+          building accessible, human-centered products. */}
+          I'm a Computer Science Undergraduate with a strong interest in software engineering and full-stack development. I enjoy solving problems, 
+          designing systems, and building apps that scale. I’ve worked on web and mobile projects using Java, Spring Boot, JavaScript, TypeScript, React, Next.js, 
+          Node.js, MongoDB, and AWS. I'm always eager to learn, take on challenges, and be part of projects that make a real impact.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 10 }}

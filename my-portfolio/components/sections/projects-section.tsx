@@ -9,10 +9,23 @@ export default function ProjectsSection() {
   const featuredProjects: Project[] = [
     {
       id: 1,
-      title: "Featured Project One",
+      title: "Jeewa Education Student Management System",
       description:
-        "A web application that allows users to search for and visualize data from various sources. Built with a focus on performance and accessibility. The dashboard provides real-time analytics and customizable widgets.",
-      tech: ["React", "TypeScript", "Node.js", "MongoDB"],
+        "Designed and developed a scalable student management platform handling registration, counseling, visa processing, and branch operations for Jeewa Education Institution.",
+      tech: [
+        "React",
+        "TypeScript",
+        "Node.js",
+        "MongoDB",
+        "Next.js",
+        "Spring Boot",
+        "AWS Cognito",
+        "AWS S3",
+        "Spring Cloud",
+        "Microservices",
+        "Role-Based Access Control",
+        "JWT Authentication",
+      ],
       media: [
         {
           type: "video",
@@ -29,26 +42,40 @@ export default function ProjectsSection() {
     },
     {
       id: 2,
-      title: "Featured Project Two",
-      description:
-        "An e-commerce platform with advanced filtering capabilities and a seamless checkout process. Integrated with multiple payment gateways and featuring a responsive design that works across all devices.",
-      tech: ["Next.js", "Tailwind CSS", "Stripe", "Prisma"],
+      title: "MrPark Online Parking Reservation System",
+      description: 
+        "Built MrPark, a web-based parking reservation system, allows users to search, book, and manage parking slots seamlessly. Integrated real-time availability tracking, secure authentication, and booking management to improve user convenience and system reliability",
+      tech: [
+        "MongoDB",
+        "Express",
+        "React",
+        "Node.js",
+        "Figma"
+      ],
       media: [
         { type: "image", src: "/placeholder.svg?height=400&width=700&text=Project+2+Image+1" },
         { type: "image", src: "/placeholder.svg?height=400&width=700&text=Project+2+Image+2" },
         { type: "image", src: "/placeholder.svg?height=400&width=700&text=Project+2+Image+3" },
       ],
       links: {
-        github: "#",
+        github: "https://github.com/DhananjayaYN/Vehicle-Parking",
         external: "#",
       },
     },
     {
       id: 3,
-      title: "Featured Project Three",
+      title: "UniMark: A Smart Attendance System for University",
       description:
-        "A content management system built for bloggers and content creators. Features a markdown editor, image optimization, and SEO tools. The platform also includes analytics to track visitor engagement.",
-      tech: ["Vue.js", "Express", "PostgreSQL", "AWS"],
+        "UniMark is a mobile application designed to streamline attendance tracking in universities. It features real-time attendance management for multiple users, QR code generation based on student registration numbers, and an integrated QR scanner for efficient check-ins. The app also enables exporting detailed attendance records to Excel, making it a practical and powerful tool for academic institutions.",
+      tech: [
+        "Flutter",
+        "Dart",
+        "Node.js",
+        "TypeScript",
+        "Sqlite",
+        "Digital Ocean",
+        "Figma"
+      ],
       media: [
         { type: "image", src: "/placeholder.svg?height=400&width=700&text=Project+3+Image+1" },
         { type: "image", src: "/placeholder.svg?height=400&width=700&text=Project+3+Image+2" },
@@ -59,8 +86,28 @@ export default function ProjectsSection() {
         },
       ],
       links: {
-        github: "#",
+        github: "https://github.com/hanzaliv/qrscanner",
         external: "#",
+      },
+    },
+    {
+      id: 4,
+      title: "Service Suite Android Application",
+      description:
+        "Service Suite (Android) : Developed the Android version of an existing Service Suite iOS and Web application using Flutter, ensuring seamless cross-platform functionality. Integrated the Google Maps API to enable location-based services and enhance user navigation. Focused on UI consistency, performance optimization, and robust API integrations to deliver a user experience aligned with the iOS counterpart.",
+      tech: [
+        "Flutter",
+        "Dart",
+        "Figma",
+        "Google Maps API",
+      ],
+      media: [
+        { type: "image", src: "/placeholder.svg?height=400&width=700&text=Project+4+Image+1" },
+        { type: "image", src: "/placeholder.svg?height=400&width=700&text=Project+4+Image+2" },
+      ],
+      links: {
+        github: "#",
+        external: "https://play.google.com/store/apps/details?id=com.suite.service_suite&hl=en",
       },
     },
   ]
@@ -139,7 +186,7 @@ export default function ProjectsSection() {
           ))}
         </div>
 
-        <motion.h3
+        {/* <motion.h3
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -153,7 +200,7 @@ export default function ProjectsSection() {
           {smallProjects.map((project, index) => (
             <SmallProjectCard key={project.id} project={project} index={index} />
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   )

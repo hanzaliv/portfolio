@@ -5,7 +5,7 @@ import Image from "next/image"
 import SectionHeading from "../ui/section-heading"
 
 export default function AboutSection() {
-  const technologies = ["JavaScript (ES6+)", "TypeScript", "React", "Next.js", "Node.js", "Tailwind CSS"]
+  const technologies = ["Java, Spring Boot","ASP.Net", "TypeScript","Flutter", "React", "Next.js", "Node.js", "Tailwind CSS", "MongoDB", "MySQL", "PostgreSQL", "AWS", "Docker"]
 
   return (
     <section id="about" className="py-24">
@@ -20,20 +20,19 @@ export default function AboutSection() {
             viewport={{ once: true, margin: "-100px" }}
           >
             <p className="text-[#8892b0] mb-4">
-              Hello! My name is Your Name and I enjoy creating things that live on the internet. My interest in web
-              development started back in 2015 when I decided to try editing custom Tumblr themes — turns out hacking
-              together a custom reblog button taught me a lot about HTML & CSS!
+            Hello! My name is Hansa Gunasinghe and I’m a passionate Computer Science undergraduate at the University of Ruhuna. 
+            I love building things that live on the internet — from web apps to backend systems that solve real-world problems.
             </p>
             <p className="text-[#8892b0] mb-4">
-              Fast-forward to today, and I've had the privilege of working at
-              <span className="text-[#3b82f6]"> an advertising agency</span>,
+            My journey started with curiosity about how systems work, and over the years, I’ve developed strong skills in full-stack development, working with both frontend and backend technologies. 
+            I enjoy creating clean, user-friendly interfaces as well as scalable and efficient systems.              
+            {/* <span className="text-[#3b82f6]"> an advertising agency</span>,
               <span className="text-[#3b82f6]"> a start-up</span>,
               <span className="text-[#3b82f6]"> a huge corporation</span>, and
-              <span className="text-[#3b82f6]"> a student-led design studio</span>.
+              <span className="text-[#3b82f6]"> a student-led design studio</span>. */}
             </p>
             <p className="text-[#8892b0] mb-4">
-              My main focus these days is building accessible, inclusive products and digital experiences for a variety
-              of clients.
+            These days, I’m focused on learning deeply about software architecture, microservices, and cloud technologies, while contributing to impactful projects.
             </p>
             <p className="text-[#8892b0]">Here are a few technologies I've been working with recently:</p>
 
@@ -64,7 +63,7 @@ export default function AboutSection() {
               <div className="absolute inset-0 border-2 border-[#3b82f6] rounded translate-x-5 translate-y-5 group-hover:translate-x-4 group-hover:translate-y-4 transition-transform duration-300"></div>
               <div className="absolute inset-0 bg-[#3b82f6]/20 rounded group-hover:bg-transparent transition-colors duration-300"></div>
               <Image
-                src="/placeholder.svg?height=300&width=300"
+                src="https://avatars.githubusercontent.com/u/141535071?v=4"
                 alt="Profile"
                 fill
                 className="rounded object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
