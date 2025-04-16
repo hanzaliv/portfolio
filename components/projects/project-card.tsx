@@ -216,12 +216,16 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           ))}
         </ul>
         <div className={`flex mt-4 gap-4 ${index % 2 === 1 ? "md:justify-end" : ""}`}>
-          <a href={project.links.github} className="text-[#ccd6f6] hover:text-[#3b82f6] transition-colors">
-            <Github size={20} />
-          </a>
-          <a href={project.links.external} className="text-[#ccd6f6] hover:text-[#3b82f6] transition-colors">
-            <ExternalLink size={20} />
-          </a>
+            {project.links.github !== "#" && (
+            <a href={project.links.github} className="text-[#ccd6f6] hover:text-[#3b82f6] transition-colors">
+              <Github size={20} />
+            </a>
+            )}
+            {project.links.external !== "#" && (
+            <a href={project.links.external} className="text-[#ccd6f6] hover:text-[#3b82f6] transition-colors">
+              <ExternalLink size={20} />
+            </a>
+            )}
         </div>
       </div>
     </motion.div>
