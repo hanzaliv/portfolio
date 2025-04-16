@@ -9,6 +9,7 @@ interface Media {
   type: "image" | "video"
   src: string
   poster?: string
+  isVertical?: boolean
 }
 
 interface ProjectLinks {
@@ -123,8 +124,9 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
                     src={item.src || "/placeholder.svg"}
                     alt={`${project.title} - Image ${i + 1}`}
                     fill
-                    className="object-cover"
-                  />
+                    // className="object-contain bg-black"
+                    className={`${item.isVertical ? "object-contain bg-black" : ""}`}
+                    />
                 )}
               </div>
             ))}

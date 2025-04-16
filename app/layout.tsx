@@ -12,9 +12,7 @@ export const metadata: Metadata = {
   title: "Hansa Gunasinghe",
   description: "Portfolio website showcasing my work as a fullstack developer",
   icons: {
-    icon: "H",
-    shortcut: "H",
-    apple: "H",
+    icon: "/favicon.ico",
   },
 }
 

@@ -57,9 +57,14 @@ export default function ProjectsSection() {
         "Figma"
       ],
       media: [
-        { type: "image", src: "/placeholder.svg?height=400&width=700&text=Project+2+Image+1" },
-        { type: "image", src: "/placeholder.svg?height=400&width=700&text=Project+2+Image+2" },
-        { type: "image", src: "/placeholder.svg?height=400&width=700&text=Project+2+Image+3" },
+        { type: "image", src: "/mrpark/home.png" },
+        { type: "image", src: "/mrpark/signin.png" },
+        { type: "image", src: "/mrpark/contact.png" },
+        { type: "image", src: "/mrpark/admin.png" },
+        { type: "image", src: "/mrpark/select-vehicle.png" },
+        { type: "image", src: "/mrpark/slots.png" },
+        { type: "image", src: "/mrpark/cart.png" },
+        { type: "image", src: "/mrpark/checkout.png" },
       ],
       links: {
         github: "https://github.com/DhananjayaYN/Vehicle-Parking",
@@ -81,13 +86,12 @@ export default function ProjectsSection() {
         "Figma"
       ],
       media: [
-        { type: "image", src: "/placeholder.svg?height=400&width=700&text=Project+3+Image+1" },
-        { type: "image", src: "/placeholder.svg?height=400&width=700&text=Project+3+Image+2" },
-        {
-          type: "video",
-          src: "/placeholder.svg?height=400&width=700&text=Project+3+Video",
-          poster: "/placeholder.svg?height=400&width=700&text=Video+Poster",
-        },
+        { type: "image", src: "/unimark/profile.jpeg", isVertical: true },
+        { type: "image", src: "/unimark/navigation.jpeg", isVertical: true },
+        { type: "image", src: "/unimark/export.jpeg", isVertical: true },
+        { type: "image", src: "/unimark/qr.jpeg", isVertical: true },
+        { type: "image", src: "/unimark/scanner.jpeg", isVertical: true },
+        { type: "image", src: "/unimark/record.jpeg", isVertical: true },
       ],
       links: {
         github: "https://github.com/hanzaliv/qrscanner",
@@ -106,8 +110,16 @@ export default function ProjectsSection() {
         "Google Maps API",
       ],
       media: [
-        { type: "image", src: "/placeholder.svg?height=400&width=700&text=Project+4+Image+1" },
-        { type: "image", src: "/placeholder.svg?height=400&width=700&text=Project+4+Image+2" },
+        { type: "image", src: "/servicesuite/loading.jpg", isVertical: true },
+        { type: "image", src: "/servicesuite/login.jpg", isVertical: true },
+        { type: "image", src: "/servicesuite/navigation.jpg", isVertical: true },
+        { type: "image", src: "/servicesuite/no-assignment.jpg", isVertical: true },
+        { type: "image", src: "/servicesuite/file-manager-grid.jpg", isVertical: true },
+        { type: "image", src: "/servicesuite/file-manager-list.jpg", isVertical: true },
+        { type: "image", src: "/servicesuite/file-manager.jpg", isVertical: true },
+        { type: "image", src: "/servicesuite/map.jpg", isVertical: true },
+        { type: "image", src: "/servicesuite/payment.jpg", isVertical: true },
+        { type: "image", src: "/servicesuite/timeclock.jpg", isVertical: true },
       ],
       links: {
         github: "#",
