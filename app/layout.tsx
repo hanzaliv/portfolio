@@ -9,8 +9,13 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "Your Name - Fullstack Developer",
+  title: "Hansa Gunasinghe",
   description: "Portfolio website showcasing my work as a fullstack developer",
+  icons: {
+    icon: "H",
+    shortcut: "H",
+    apple: "H",
+  },
 }
 
 export default function RootLayout({

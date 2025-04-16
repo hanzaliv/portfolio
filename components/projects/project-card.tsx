@@ -32,8 +32,11 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project, index }: ProjectCardProps) {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [isPaused, setIsPaused] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
   const totalSlides = project.media.length
+  const autoScrollInterval = useRef<NodeJS.Timeout | null>(null)
+  const AUTO_SCROLL_DELAY = 3000 // 5 seconds between slides
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev === totalSlides - 1 ? 0 : prev + 1))
@@ -43,12 +46,42 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
     setCurrentSlide((prev) => (prev === 0 ? totalSlides - 1 : prev - 1))
   }
 
+  // Set up auto-scrolling
+  useEffect(() => {
+    // Only set up auto-scrolling if there's more than one slide
+    if (totalSlides > 1 && !isPaused) {
+      autoScrollInterval.current = setInterval(() => {
+        nextSlide()
+      }, AUTO_SCROLL_DELAY)
+    }
+
+    // Clean up interval on unmount or when isPaused changes
+    return () => {
+      if (autoScrollInterval.current) {
+        clearInterval(autoScrollInterval.current)
+      }
+    }
+  }, [totalSlides, isPaused])
+
   // Ensure video plays when it's the active slide
   useEffect(() => {
     if (project.media[currentSlide].type === "video" && videoRef.current) {
       videoRef.current.play().catch((err) => console.error("Video play failed:", err))
     }
   }, [currentSlide, project.media])
+
+  // Handle mouse enter/leave to pause/resume auto-scrolling
+  const handleMouseEnter = () => {
+    setIsPaused(true)
+    if (autoScrollInterval.current) {
+      clearInterval(autoScrollInterval.current)
+      autoScrollInterval.current = null
+    }
+  }
+
+  const handleMouseLeave = () => {
+    setIsPaused(false)
+  }
 
   return (
     <motion.div
@@ -60,7 +93,11 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
     >
       {/* Project Media Carousel - Always on top for mobile, alternating sides for desktop */}
       <div className={`md:col-span-7 order-1 ${index % 2 === 1 ? "md:order-2" : "md:order-1"}`}>
-        <div className="relative aspect-video rounded overflow-hidden group">
+        <div
+          className="relative aspect-video rounded overflow-hidden group"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
           {/* Media Carousel */}
           <div className="relative w-full h-full">
             {project.media.map((item, i) => (
@@ -72,11 +109,11 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
               >
                 {item.type === "video" ? (
                   <video
-                    ref={i === 0 ? videoRef : null}
+                    ref={i === currentSlide ? videoRef : null}
                     src={item.src}
                     poster={item.poster}
                     className="w-full h-full object-cover"
-                    autoPlay={i === 0}
+                    autoPlay={i === currentSlide}
                     muted
                     loop
                     playsInline
@@ -92,17 +129,40 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
               </div>
             ))}
 
+            {/* Auto-scroll indicator */}
+            {!isPaused && totalSlides > 1 && (
+              <div className="absolute bottom-0 left-0 h-1 bg-[#3b82f6]/50 z-20">
+                <motion.div
+                  className="h-full bg-[#3b82f6]"
+                  initial={{ width: "0%" }}
+                  animate={{ width: "100%" }}
+                  transition={{
+                    duration: AUTO_SCROLL_DELAY / 1000,
+                    ease: "linear",
+                    repeat: Number.POSITIVE_INFINITY,
+                    repeatType: "loop",
+                  }}
+                />
+              </div>
+            )}
+
             {/* Carousel Controls */}
             <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-between z-20 px-4">
               <button
-                onClick={prevSlide}
+                onClick={(e) => {
+                  e.stopPropagation()
+                  prevSlide()
+                }}
                 className="p-2 rounded-full bg-[#0a192f]/80 text-[#ccd6f6] hover:bg-[#3b82f6]/80 transition-colors"
                 aria-label="Previous slide"
               >
                 <ChevronLeft size={20} />
               </button>
               <button
-                onClick={nextSlide}
+                onClick={(e) => {
+                  e.stopPropagation()
+                  nextSlide()
+                }}
                 className="p-2 rounded-full bg-[#0a192f]/80 text-[#ccd6f6] hover:bg-[#3b82f6]/80 transition-colors"
                 aria-label="Next slide"
               >
@@ -115,7 +175,10 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
               {project.media.map((_, i) => (
                 <button
                   key={i}
-                  onClick={() => setCurrentSlide(i)}
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    setCurrentSlide(i)
+                  }}
                   className={`w-2 h-2 rounded-full transition-colors ${
                     i === currentSlide ? "bg-[#3b82f6]" : "bg-[#ccd6f6]/50"
                   }`}
@@ -151,16 +214,12 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           ))}
         </ul>
         <div className={`flex mt-4 gap-4 ${index % 2 === 1 ? "md:justify-end" : ""}`}>
-            {project.links.github !== "#" && (
-            <a href={project.links.github} className="text-[#ccd6f6] hover:text-[#3b82f6] transition-colors" target="_blank">
-              <Github size={20} />
-            </a>
-            )}
-            {project.links.external !== "#" && (
-            <a href={project.links.external} className="text-[#ccd6f6] hover:text-[#3b82f6] transition-colors" target="_blank">
-              <ExternalLink size={20} />
-            </a>
-            )}
+          <a href={project.links.github} className="text-[#ccd6f6] hover:text-[#3b82f6] transition-colors">
+            <Github size={20} />
+          </a>
+          <a href={project.links.external} className="text-[#ccd6f6] hover:text-[#3b82f6] transition-colors">
+            <ExternalLink size={20} />
+          </a>
         </div>
       </div>
     </motion.div>

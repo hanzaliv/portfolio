@@ -14,13 +14,13 @@ export default function SocialLinks() {
           transition={{ duration: 0.5 }}
           className="flex justify-center gap-6"
         >
-          <a href="#" className="text-[#a8b2d1] hover:text-[#3b82f6] transition-colors p-2">
+          <a href="https://github.com/hanzaliv" className="text-[#a8b2d1] hover:text-[#3b82f6] transition-colors p-2">
             <Github size={20} />
           </a>
-          <a href="#" className="text-[#a8b2d1] hover:text-[#3b82f6] transition-colors p-2">
+          {/* <a href="#" className="text-[#a8b2d1] hover:text-[#3b82f6] transition-colors p-2">
             <Twitter size={20} />
-          </a>
-          <a href="#" className="text-[#a8b2d1] hover:text-[#3b82f6] transition-colors p-2">
+          </a> */}
+          <a href="https://www.linkedin.com/in/hansa-gunasinghe/" className="text-[#a8b2d1] hover:text-[#3b82f6] transition-colors p-2">
             <Linkedin size={20} />
           </a>
           <a href="mailto:your.email@example.com" className="text-[#a8b2d1] hover:text-[#3b82f6] transition-colors p-2">

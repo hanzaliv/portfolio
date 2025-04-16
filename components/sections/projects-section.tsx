@@ -4,6 +4,8 @@ import { motion } from "framer-motion"
 import SectionHeading from "../ui/section-heading"
 import ProjectCard, { type Project } from "../projects/project-card"
 import SmallProjectCard from "../projects/small-project-card"
+import jeewa from "@/images/jeewa/jeewa.png"
+
 
 export default function ProjectsSection() {
   const featuredProjects: Project[] = [
@@ -28,12 +30,14 @@ export default function ProjectsSection() {
       ],
       media: [
         {
-          type: "video",
-          src: "/placeholder.svg?height=400&width=700&text=Project+Video",
-          poster: "/placeholder.svg?height=400&width=700&text=Video+Poster",
+          type: "image",
+          src: "/jeewa/jeewa.png",
         },
-        { type: "image", src: "/placeholder.svg?height=400&width=700&text=Project+1+Image+2" },
-        { type: "image", src: "/placeholder.svg?height=400&width=700&text=Project+1+Image+3" },
+        { type: "image", src: "/jeewa/application view.png" },
+        { type: "image", src: "jeewa/assign counselor.png" },
+        { type: "image", src: "jeewa/counselor dashboard.png" },
+        { type: "image", src: "jeewa/counselor student view.png" },
+        { type: "image", src: "jeewa/new-application.png"},
       ],
       links: {
         github: "#",
